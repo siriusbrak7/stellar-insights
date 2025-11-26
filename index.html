@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Specialist | Advanced Teaching Strategies</title>
+    <style>
+        :root {
+            --primary: #1a535c;
+            --secondary: #2d3047;
+            --accent: #ff6b6b;
+            --accent2: #ffd166;
+            --accent3: #06d6a0;
+            --light: #f8f9fa;
+            --dark: #2d3047;
+            --success: #06d6a0;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 20px rgba(45, 48, 71, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent2);
+            transition: var(--transition);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: linear-gradient(45deg, var(--primary), var(--accent3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, var(--accent), var(--accent2));
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffd166" fill-opacity="0.1" points="1000,100 1000,1000 100,1000"/><polygon fill="%2306d6a0" fill-opacity="0.1" points="0,900 0,1000 100,1000"/></svg>');
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin: 0 auto 30px;
+            position: relative;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent), var(--accent2));
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--accent), var(--accent2));
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .journey-highlight {
+            background: linear-gradient(45deg, var(--accent2), var(--accent3));
+            color: var(--dark);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+        
+        .journey-highlight:hover {
+            transform: translateX(5px);
+        }
+        
+        .journey-highlight h4 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(45, 48, 71, 0.1);
+            border: 3px solid var(--accent2);
+            transition: var(--transition);
+        }
+        
+        .about-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(45, 48, 71, 0.2);
+        }
+        
+        .image-placeholder {
+            background: linear-gradient(45deg, var(--primary), var(--accent3));
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        /* Teaching Insights Section */
+        .insights {
+            background-color: var(--light);
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .insight-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(45, 48, 71, 0.08);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent3);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .insight-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .insight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(45, 48, 71, 0.15);
+        }
+        
+        .insight-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .insight-card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .insight-card p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .insight-tip {
+            background: linear-gradient(45deg, var(--accent2), var(--accent3));
+            color: var(--dark);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        /* Stellar Scholar Section */
+        .app-showcase {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .app-details {
+            flex: 1;
+        }
+        
+        .app-details h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .app-details p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(45, 48, 71, 0.1);
+            border-top: 3px solid var(--accent);
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(45, 48, 71, 0.15);
+        }
+        
+        .feature-item h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .feature-item p {
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .app-preview {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(45, 48, 71, 0.1);
+            border: 3px solid var(--accent2);
+        }
+        
+        /* Dashboard Preview Section */
+        #dashboard-preview {
+            background: linear-gradient(135deg, #0f0c29, #302b63);
+            padding: 80px 0;
+        }
+        
+        .dashboard-tabs {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            gap: 0.5rem;
+        }
+        
+        .tab-btn {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+        
+        .tab-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .tab-btn.active {
+            background: #FFD700;
+            color: #0f0c29;
+            border-color: #FFD700;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 2rem;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .preview-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .preview-header h3 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+        
+        .preview-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+        
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .preview-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .preview-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .preview-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .preview-card h4 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+        
+        .preview-card p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+        
+        .feature-showcase {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(102, 126, 234, 0.1));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .feature-badge {
+            background: #FFD700;
+            color: #0f0c29;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .feature-item h5 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .feature-item p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .preview-cta {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .preview-cta h3 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+        
+        .preview-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(45, 48, 71, 0.08);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .service-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(45, 48, 71, 0.15);
+            border-color: var(--accent2);
+        }
+        
+        .service-card.featured {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, white, #f8f9fa);
+        }
+        
+        .service-card.featured::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-size: 1.4rem;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 25px 0;
+            background: linear-gradient(45deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .features li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(45, 48, 71, 0.1);
+            border-left: 4px solid var(--accent2);
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent3);
+            box-shadow: 0 0 0 3px rgba(6, 214, 160, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, var(--accent2), var(--accent3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-links h4 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent2);
+            border-radius: 2px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent2);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Stellar-Scholar Pricing Styles */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .pricing-table th {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: left;
+        }
+        .pricing-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+        .pricing-table .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .dashboard-preview-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-preview-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.3"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.2"/><circle cx="60" cy="80" r="1" fill="white" opacity="0.4"/></svg>');
+        }
+
+        .preview-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            z-index: 1;
+        }
+
+        .preview-header h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .preview-header p {
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        .preview-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            z-index: 1;
+        }
+
+        .preview-tab {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .preview-tab.active {
+            background: rgba(255, 255, 255, 0.9);
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .preview-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-end;
+            justify-content: center;
+            flex: 1;
+            z-index: 1;
+        }
+
+        .preview-stats {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .preview-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.5rem;
+            height: 120px;
+        }
+
+        .chart-bar {
+            width: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 4px 4px 0 0;
+            transition: var(--transition);
+        }
+
+        .chart-bar:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(45, 48, 71, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content, .app-showcase, .contact-content {
+                flex-direction: column;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .tab-buttons {
+                flex-direction: column;
+            }
+            
+            .preview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        .placeholder-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #856404;
+            font-style: italic;
+        }
+
+        .form-success {
+            display: none;
+            background: var(--success);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            z-index: 999;
+        }
+        
+        .scroll-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">StellarInsights</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#insights">Teaching Insights</a></li>
+                    <li><a href="#app">Stellar-Scholar</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your School with Advanced Teaching Strategies</h1>
+                <p>Proven methodologies, innovative assessment tools, and expert guidance to elevate student engagement and learning outcomes.</p>
+                <div class="hero-buttons">
+                    <a href="#insights" class="btn">Explore Teaching Insights</a>
+                    <a href="#contact" class="btn btn-outline">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Teaching Journey & Educational Philosophy</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>My journey in education began at age 15, immediately after completing junior high school, when I started working in early childhood education. In that role, I focused on developing children's foundational numeracy and literacy skills while incorporating creative activities such as poetry recitation and delivering the full early childhood curriculum. This formative experience ignited my lifelong passion for teaching and profoundly shaped the core principles of my educational philosophy.</p>
+                    
+                    <p>After six months, I enrolled in Senior High School as a Science student. Upon graduation, I returned to assist my former Junior High School teacher at her school, where I worked as a teaching assistant. In that role, I supported her in delivering Science, Citizenship Education, and Religious and Moral Education. Teaching across different subjects and age groups provided me with broad and invaluable classroom experience.</p>
+                    
+                    <div class="journey-highlight">
+                        <h4>Key Transition: From Classroom to Innovation</h4>
+                        <p>My formal career as a classroom teacher officially began when I was appointed to teach Stage 6 pupils. After seven rewarding months in that role, I gained admission to Kwame Nkrumah University of Science and Technology, where I pursued and successfully completed a Bachelor's degree in Biochemistry.</p>
+                    </div>
+                    
+                    <p>During my undergraduate studies, I completed clinical biochemistry internships where I conducted patient laboratory tests and further solidified my scientific knowledge. Although I had initially envisioned a career as a medical laboratory scientist, stringent licensing requirements ultimately guided me back to education. This transition reaffirmed teaching as my true calling and life's work.</p>
+                    
+                    <p>I completed my national service as a Junior High School Science teacher, an experience that further deepened my commitment to the teaching profession. Immediately afterward, I enrolled in a Master's in Education (M.Ed.) program. Throughout the course, I discovered that my teaching style was distinctly innovative and frequently diverged from traditional approaches.</p>
+                    
+                    <div class="journey-highlight">
+                        <h4>Pedagogical Transformation</h4>
+                        <p>A pivotal moment came when I received specialized training in modern pedagogies, particularly the Flipped Classroom approach. Combined with my natural teaching strengths, this training transformed me into a specialized STEM educator capable of delivering IGCSE curricula in Biology, Physics, and Chemistry, including A-Level courses.</p>
+                    </div>
+                    
+                    <p>One of the highlights of my career was teaching IGCSE A-Level Biology, where student feedback was overwhelmingly positive. Learners consistently praised my innovative methods and the profound impact these approaches had on their understanding and academic growth.</p>
+                    
+                    <p>Balancing full-time teaching with graduate studies was demanding, yet I completed my M.Ed. without interrupting my classroom responsibilities. In my final two years of teaching, I fully embraced Inquiry-Based strategies and led a school-endorsed four-week Professional Development program on Project-Based Learning for colleagues.</p>
+                    
+                    <div class="journey-highlight">
+                        <h4>Student-Athlete Success Stories</h4>
+                        <p>My work with student-athletes proved especially rewarding. My graduate thesis, titled "The Effects of Inquiry-Based Learning on Student-Athletes' Classroom Engagement and Academic Performance," produced outstanding results. The approach dramatically improved academic outcomes for Pre-IGCSE athletes and successfully prepared IGCSE athletes transitioning to American high schools on sports scholarships.</p>
+                    </div>
+                    
+                    <p>Throughout my career, student feedback and formative assessment data became essential tools for continuously refining my practice. Recognizing the critical role of technology for 21st-century learners, I integrated EdTech into my classroom, an experience that ultimately led me to found Stellar-Scholar, a comprehensive multi-tenant educational technology platform designed to transform how students interact with content and assessments.</p>
+                    
+                    <p>Although I continue to teach actively, I have expanded my work into educational consulting and EdTech entrepreneurship. Building on my earlier experience as a consultant for English Hubs teachers, where I supported colleagues in adopting effective teaching methodologies, I now bring the same depth of classroom insight to a broader stage. My journey from early childhood education to delivering advanced IGCSE and A-Level STEM curricula, grounded in research-backed innovative approaches and technology integration, uniquely positions me to partner with schools and educators to strengthen teaching practices and drive better student outcomes.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://imgur.com/a/DsH8ypn" alt="Your Professional Photo" style="width: 100%; height: 400px; object-fit: cover; border-radius: 15px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Insights Section -->
+    <section class="insights" id="insights">
+        <div class="container">
+            <div class="section-title">
+                <h2>Teaching Insights & Strategies</h2>
+                <p>Practical approaches and innovative ideas for modern classrooms</p>
+            </div>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-icon">🚀</div>
+                    <h3>Project-Based Learning Framework</h3>
+                    <p>My Project-Based Learning (PBL) framework engages students deeply with real-world content by starting with a thought-provoking driving question and an immersive launch, such as a field trip, video, or real-life problem statement. Students then conduct sustained inquiry, choose how to showcase their learning through presentations, prototypes, posters, models, or other formats, and follow a clear plan that incorporates regular peer and teacher feedback with iterative refinement to achieve high-quality outcomes. The project concludes with a public presentation to an authentic audience during school assemblies, exhibition weeks, or similar events, followed by meaningful written and verbal reflection. This process cultivates lasting understanding, critical thinking, collaboration, creativity, and student ownership while seamlessly developing essential 21st-century skills and confidence in addressing complex challenges.</p>
+                    <div class="insight-tip">
+                        Quick Tip: Student choice in project topics boosts motivation and ownership.
+                    </div>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-icon">🔬</div>
+                    <h3>Science Education Innovation</h3>
+                    <p>My science teaching methodology is built around making complex concepts not just accessible, but genuinely exciting and memorable for students. I achieve this by deliberately blending rigorous content with elements from the liberal arts, motion graphics, cartoons, and meaningful storytelling that students already love. I frequently draw on powerful visual and narrative references from popular culture: scenes from X-Men illuminate mutation and genetic variation, episodes of Primal bring competition and natural selection to life in ecosystems, and carefully selected movie clips or animated shorts serve as vivid hooks that instantly connect abstract ideas to emotions and experiences students recognize. These references act as cognitive bridges, transforming potentially dry topics into stories that feel relevant and human. Hands-on engagement remains at the heart of every lesson. Simple, dramatic demonstrations (such as the classic magnesium + hydrochloric acid reaction with the "squeaky pop" hydrogen test) consistently produce audible gasps and wide-eyed excitement, while PhET simulations allow students to manipulate variables in ways no textbook can match. These experiences turn passive learning into active discovery. I place particular emphasis on student-led exploration: lessons often begin with their own "what if" questions, which we pursue together through guided web research, interactive simulations, and structured discussions designed to surface and resolve misconceptions in real time. This inquiry-driven approach, combined with storytelling, visuals, and tangible experiments, ensures that even the most challenging topics in Biology, Chemistry, and Physics are understood deeply, remembered longer, and, most importantly, genuinely enjoyed.</p>
+                    <div class="insight-tip">
+                        Quick Tip: Incorporate technology like PhET simulations for interactive learning.
+                    </div>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-icon">📊</div>
+                    <h3>Assessment Revolution</h3>
+                    <p>I incorporate interactive assessment tools such as Wayground, Blooket, and especially Stellar Scholar (my top recommendation) to deliver engaging, real-time formative checks that keep students motivated and provide instant insight into their understanding.</p>
+                    <div class="insight-tip">
+                        Quick Tip: Use formative assessments, group quiz competitions, and reflective writing for deeper insight.
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">💡</div>
+                    <h3>Student Engagement Techniques</h3>
+                    <p>Incorporate engaging visuals, short skits/videos, hands-on learning, and teacher-facilitated student inquiry to spark curiosity and participation.</p>
+                    <div class="insight-tip">
+                        Quick Tip: Differentiated instruction makes every lesson equitable and inclusive.
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">🔄</div>
+                    <h3>Differentiated Instruction</h3>
+                    <p>Learning in groups, ability-level grouping, students as teachers, and extended challenges for advanced learners.</p>
+                    <div class="insight-tip">
+                        Quick Tip: Ability-level grouping maximizes individual growth.
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">🌐</div>
+                    <h3>Technology Integration</h3>
+                    <p>All tech tools serve as powerful teaching assistants that extend, never replace, excellent pedagogy.</p>
+                    <div class="insight-tip">
+                        Quick Tip: Stellar-Scholar is my top recommendation for modern assessment technology.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stellar-Scholar Section -->
+    <section id="app">
+        <div class="container">
+            <div class="section-title">
+                <h2>Stellar-Scholar Assessment Platform</h2>
+                <p>Comprehensive assessment solution built by an educator, for educators</p>
+            </div>
+            <div class="app-showcase">
+                <div class="app-details">
+                    <h3>Next-Generation Assessment Platform</h3>
+                    <p>Stellar Scholar revolutionizes how schools approach student assessment with intuitive tools and powerful analytics.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h4>Multiple Assessment Types</h4>
+                            <p>Written, MCQ, True/False, Short Answer, and Mixed assessments with auto-grading capabilities</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Interactive Student Interface</h4>
+                            <p>Engaging assessment-taking experience with draft saving and progress tracking</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>AI-Powered Learning Support</h4>
+                            <p>Gemini AI integration for explanations and summaries of study materials</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Cosmic Leaderboard System</h4>
+                            <p>Gamified progress tracking with grade-level filtering and school-wide rankings</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Teacher Dashboard</h4>
+                            <p>Create assessments, track submissions, monitor student progress, and manage grading</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>School Admin Dashboard</h4>
+                            <p>Comprehensive analytics, user management, and school-wide performance monitoring</p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 40px;">Stellar-Scholar Subscription Plans</h3>
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Plan</th>
+                                <th>Price (per month)</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Regular</strong></td>
+                                <td class="price">$50</td>
+                                <td>Individual teachers or small departments</td>
+                            </tr>
+                            <tr>
+                                <td><strong>VIP</strong></td>
+                                <td class="price">$70</td>
+                                <td>Growing teams needing extra features</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Platinum</strong></td>
+                                <td class="price">$90</td>
+                                <td>Medium-sized schools or departments</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gold</strong></td>
+                                <td class="price">$120</td>
+                                <td>Large institutions with full-feature access</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><em>Book a demo to explore the platform. After your demo, choose the plan that best fits your needs.</em></p>
+                    
+                    <div class="cta-buttons">
+                        <a href="https://stellar-scholar.onrender.com" target="_blank" rel="noopener" class="btn">View Live Demo</a>
+                        <a href="#contact" class="btn btn-outline">Book Demo & Choose Plan</a>
+                    </div>
+                </div>
+                <div class="app-preview">
+                    <div class="dashboard-preview-placeholder">
+                        <div class="preview-header">
+                            <h4>🎯 Stellar Scholar Platform</h4>
+                            <p>Multi-tier Dashboard System</p>
+                        </div>
+                        <div class="preview-tabs">
+                            <div class="preview-tab active">Teacher</div>
+                            <div class="preview-tab">Student</div>
+                            <div class="preview-tab">Admin</div>
+                        </div>
+                        <div class="preview-content">
+                            <div class="preview-stats">
+                                <div class="stat">
+                                    <div class="stat-value">95%</div>
+                                    <div class="stat-label">Completion</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value">87%</div>
+                                    <div class="stat-label">Avg Score</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value">42</div>
+                                    <div class="stat-label">Students</div>
+                                </div>
+                            </div>
+                            <div class="preview-chart">
+                                <div class="chart-bar" style="height: 70%"></div>
+                                <div class="chart-bar" style="height: 85%"></div>
+                                <div class="chart-bar" style="height: 60%"></div>
+                                <div class="chart-bar" style="height: 90%"></div>
+                                <div class="chart-bar" style="height: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview Section -->
+    <section id="dashboard-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: #FFD700;">📊 See Stellar Scholar in Action</h2>
+                <p style="color: white;">Multi-tier dashboards designed for every user</p>
+            </div>
+
+            <!-- Dashboard Tabs -->
+            <div class="dashboard-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="teacher">👨‍🏫 Teacher Dashboard</button>
+                    <button class="tab-btn" data-tab="student">🚀 Student Dashboard</button>
+                    <button class="tab-btn" data-tab="admin">👨‍💼 Admin Dashboard</button>
+                </div>
+
+                <!-- Teacher Dashboard Preview -->
+                <div class="tab-content active" id="teacher-tab">
+                    <div class="dashboard-preview">
+                        <div class="preview-header">
+                            <h3>Teacher Dashboard - Complete Classroom Management</h3>
+                            <p>Create, assign, and grade assessments with powerful analytics</p>
+                        </div>
+                        <div class="preview-grid">
+                            <div class="preview-card">
+                                <div class="preview-icon">📝</div>
+                                <h4>Create Assessments</h4>
+                                <p>Written, MCQ, True/False, Short Answer, and Mixed assessments</p>
+                            </div>
+                            <div class="preview-card">
+                                <div class="preview-icon">📊</div>
+                                <h4>Grade Submissions</h4>
+                                <p>Auto-grade MCQs and manually grade written responses with detailed feedback</p>
+                            </div>
+                            <div class="preview-card">
+                                <div class="preview-icon">📈</div>
+                                <h4>Track Progress</h4>
+                                <p>Monitor student completion rates, performance, and engagement metrics</p>
+                            </div>
+                            <div class="preview-card">
+                                <div class="preview-icon">👥</div>
+                                <h4>Class Analytics</h4>
+                                <p>View comprehensive class-wide performance data and trends</p>
+                            </div>
+                        </div>
+                        <div class="feature-showcase">
+                            <div class="feature-item">
+                                <span class="feature-badge">Featured</span>
+                                <h5>Real-time Student Progress Tracking</h5>
+                                <p>Monitor individual student performance, completion rates, and engagement metrics with detailed analytics that help you identify learning gaps and celebrate successes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Dashboard Preview -->
+                <div class="tab-content" id="student-tab">
+                    <div class="dashboard-preview">
+                        <div class="preview-header">
+                            <h3>Student Dashboard - Engaging Learning Experience</h3>
+                            <p>Designed to motivate and track student progress</p>
+                        </div>
+                        <div class="preview-grid">
+                            <div class="preview-card">
+                                <div class="preview-icon">🎯</div>
+                                <h4>Take Assessments</h4>
+                                <p>Interactive assessment interface with draft saving and progress tracking</p>
+                            </div>
+                            <div class="preview-card">
+                                <div class="preview-icon">📖</div>
+                                <h4>Work History</h4>
+                                <p>Access complete history of submissions, grades, and teacher feedback</p>
+                            </div>
+                            <div class="preview-card">
+                                <div class="preview-icon">🤖</div>
+                                <h4>AI Learning Assistant</h4>
+                                <p>Get AI explanations and summaries of study materials powered by Gemini AI</p>
+                            </div>
+                            <div class="preview-card">
+                                <div class="preview-icon">🏆</div>
+                                <h4>Cosmic Leaderboard</h4>
+                                <p>Compete with peers in a gamified ranking system with grade-level filtering</p>
+                            </div>
+                        </div>
+                        <div class="feature-showcase">
+                            <div class="feature-item">
+                                <span class="feature-badge">Featured</span>
+                                <h5>AI-Powered Learning Support</h5>
+                                <p>Students can get instant explanations and summaries of any study material using our integrated Gemini AI assistant, making complex concepts easier to understand and remember.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Dashboard Preview -->
+                <div class="tab-content" id="admin-tab">
+                    <div class="dashboard-preview">
+                        <div class="preview-header">
+                            <h3>Admin Dashboard - School-Wide Oversight</h3>
+                            <p>Manage users and monitor school performance</p>
+                        </div>
+                        <div class="preview-grid">
+                            <div class="preview-card">
+                                <div class="preview-icon">👤</div>
+                                <h4>User Management</h4>
+                                <p>Approve, manage, and monitor all teachers and students</p>
+                            </div>
+                            <div class="preview-card">
+                                <div class="preview-icon">📋</div>
+                                <h4>Registration Approval</h4>
+                                <p>Review and approve new user registrations with role assignment</p>
+                            </div>
+                            <div class="preview-card">
+                                <div class="preview-icon">📊</div>
+                                <h4>School Analytics</h4>
+                                <p>Monitor overall school performance metrics and assessment trends</p>
+                            </div>
+                            <div class="preview-card">
+                                <div class="preview-icon">🌌</div>
+                                <h4>Cosmic Leaderboard</h4>
+                                <p>View school-wide rankings and filter by grade levels</p>
+                            </div>
+                        </div>
+                        <div class="feature-showcase">
+                            <div class="feature-item">
+                                <span class="feature-badge">Featured</span>
+                                <h5>Comprehensive School Analytics</h5>
+                                <p>Get detailed insights into school-wide performance with metrics on total assessments, submission rates, completion percentages, and grade distribution across all classes and subjects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="preview-cta">
+                <h3>Ready to see the full platform?</h3>
+                <p>Experience the complete Stellar Scholar assessment system with all features enabled.</p>
+                <div class="cta-buttons">
+                    <a href="https://stellar-scholar.onrender.com" target="_blank" rel="noopener" class="btn">🚀 View Live Demo</a>
+                    <a href="#contact" class="btn btn-outline">📞 Schedule Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Development Services</h2>
+                <p>Customized support to transform your teaching approach</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📚</div>
+                    <h3>Single Day Intensive</h3>
+                    <p>Comprehensive full-day workshop on Advanced Teaching Strategies implementation.</p>
+                    <ul class="features">
+                        <li>4-hour interactive session</li>
+                        <li>Advanced teaching practices</li>
+                        <li>Hands-on activity design</li>
+                        <li>Curriculum integration strategies</li>
+                    </ul>
+                    <div class="price">$120/session</div>
+                    <a href="#contact" class="btn">Book Now</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Bi-weekly Sessions</h3>
+                    <p>Ongoing professional development with consistent support.</p>
+                    <ul class="features">
+                        <li>90-minute sessions for 2 weeks, one session per week</li>
+                        <li>Progressive skill building</li>
+                        <li>Implementation support</li>
+                        <li>Q&A and problem-solving</li>
+                    </ul>
+                    <div class="price">$45/session</div>
+                    <a href="#contact" class="btn">Book Now</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💫</div>
+                    <h3>Bi-weekly + Stellar Scholar</h3>
+                    <p>Ongoing PD with limited platform access throughout term.</p>
+                    <ul class="features">
+                        <li>2x 90-minute sessions, one session per week</li>
+                        <li>Limited Stellar-Scholar access</li>
+                        <li>Platform training included</li>
+                        <li>Progress monitoring support</li>
+                    </ul>
+                    <div class="price">$100/session</div>
+                    <a href="#contact" class="btn">Book Now</a>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="service-icon">🏆</div>
+                    <h3>Full Term Package</h3>
+                    <p>Comprehensive support with weekly or on-demand consultations.</p>
+                    <ul class="features">
+                        <li>Weekly/on-demand consultations</li>
+                        <li>VIP Stellar-Scholar access</li>
+                        <li>Customized PD sessions</li>
+                        <li>Priority support</li>
+                        <li>Implementation guidance</li>
+                    </ul>
+                    <div class="price">$150/month</div>
+                    <a href="#contact" class="btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Ready to transform your approach to teaching and assessment?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Start the Conversation</h3>
+                    <p>Whether you're interested in professional development, the Stellar Scholar platform, or both - I'm here to help your school achieve its educational goals.</p>
+                    <div class="contact-details">
+                        <p><strong>Email:</strong> bbrak1235@gmail.com</p>
+                        <p><strong>Phone:</strong> +233-50-875-8626</p>
+                        <p><strong>Availability:</strong> In-person sessions and virtual consultations</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/xjklzqwd" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="school">School/Organization</label>
+                            <input type="text" id="school" name="school" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" class="form-control" required>
+                                <option value="">Select a service</option>
+                                <option value="single-day">Single Day Intensive</option>
+                                <option value="bi-weekly">Bi-weekly Sessions</option>
+                                <option value="bi-weekly-app">Bi-weekly + Stellar-Scholar</option>
+                                <option value="full-term">Full Term Package</option>
+                                <option value="stellar-regular">Stellar-Scholar Regular ($50/mo)</option>
+                                <option value="stellar-vip">Stellar-Scholar VIP ($70/mo)</option>
+                                <option value="stellar-platinum">Stellar-Scholar Platinum ($90/mo)</option>
+                                <option value="stellar-gold">Stellar-Scholar Gold ($120/mo)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Tell me about your school's needs and challenges..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">StellarInsights</div>
+                    <p>Transforming education through innovative teaching strategies and cutting-edge assessment technology.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#insights">Teaching Insights</a></li>
+                        <li><a href="#app">Stellar-Scholar</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">PD Sessions</a></li>
+                        <li><a href="#services">Full Term Package</a></li>
+                        <li><a href="#app">Stellar-Scholar</a></li>
+                        <li><a href="#app">Custom Solutions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 StellarInsights. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top">↑</div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(window.innerWidth <= 768) {
+                        document.querySelector('.nav-links').classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Dashboard tabs functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = this.dataset.tab + '-tab';
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Scroll animation for cards
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe cards for animation
+            document.querySelectorAll('.insight-card, .service-card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.boxShadow = '0 5px 25px rgba(45, 48, 71, 0.15)';
+                } else {
+                    header.style.boxShadow = '0 2px 20px rgba(45, 48, 71, 0.1)';
+                }
+            });
+
+            // Scroll to top button functionality
+            const scrollToTopBtn = document.querySelector('.scroll-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    scrollToTopBtn.classList.add('active');
+                } else {
+                    scrollToTopBtn.classList.remove('active');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add hover effects to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                if(!this.classList.contains('btn-outline')) {
+                    this.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
